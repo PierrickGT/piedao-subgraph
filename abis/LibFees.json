@@ -1,0 +1,73 @@
+{
+  "contractName": "LibFees",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "oldFee",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "newFee",
+          "type": "uint256"
+        }
+      ],
+      "name": "AnnualFeeChanged",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "AnnualFeeClaimed",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "oldRecipient",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newRecipient",
+          "type": "address"
+        }
+      ],
+      "name": "FeeRecipientChanged",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "MAX_ANNUAL_FEE",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x6092610024600b82828239805160001a607314601757fe5b30600052607381538281f3fe730000000000000000000000000000000000000000301460806040526004361060335760003560e01c80633809283a146038575b600080fd5b603e6050565b60408051918252519081900360200190f35b67016345785d8a00008156fea26469706673582212201c0e6ea376b61aff65d7a82733db3bd3427cfcd8cbaf0cb22d5a035c3a24933e64736f6c63430006040033",
+  "deployedBytecode": "0x730000000000000000000000000000000000000000301460806040526004361060335760003560e01c80633809283a146038575b600080fd5b603e6050565b60408051918252519081900360200190f35b67016345785d8a00008156fea26469706673582212201c0e6ea376b61aff65d7a82733db3bd3427cfcd8cbaf0cb22d5a035c3a24933e64736f6c63430006040033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

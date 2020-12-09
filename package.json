@@ -1,14 +1,14 @@
 {
-  "name": "PieDAO",
+  "name": "piedao-subgraph",
+  "license": "MIT",
   "version": "0.1.0",
   "scripts": {
-    "build-contract": "solc contracts/Gravity.sol --abi -o abis --overwrite && solc contracts/Gravity.sol --bin -o bin --overwrite",
-    "create": "graph create PierrickGT/PieDAO --node https://api.thegraph.com/deploy/",
-    "create-local": "graph create PierrickGT/PieDAO --node http://127.0.0.1:8020",
+    "create": "graph create pierrickgt/pie-dao --node https://api.thegraph.com/deploy/",
+    "create-local": "graph create pierrickgt/pie-dao --node http://127.0.0.1:8020",
     "codegen": "graph codegen",
     "build": "graph build",
-    "deploy": "graph deploy PierrickGT/PieDAO --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
-    "deploy-local": "graph deploy PierrickGT/PieDAO --ipfs http://localhost:5001 --node http://127.0.0.1:8020"
+    "deploy": "graph deploy pierrickgt/pie-dao --ipfs https://api.thegraph.com/ipfs/ --node https://api.thegraph.com/deploy/",
+    "deploy-local": "graph deploy pierrickgt/pie-dao --ipfs http://localhost:5001 --node http://127.0.0.1:8020"
   },
   "devDependencies": {
     "@graphprotocol/graph-cli": "^0.18.0",
