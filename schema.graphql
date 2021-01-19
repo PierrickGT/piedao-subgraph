@@ -10,3 +10,10 @@ type Owner @entity {
   previousOwner: Bytes!
   newOwner: Bytes!
 }
+
+type ExperiePie @entity {
+    id: ID!
+    address: Bytes!
+    deployer: Bytes!
+    index: BigInt!
+}

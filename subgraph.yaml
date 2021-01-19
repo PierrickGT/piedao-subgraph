@@ -18,7 +18,7 @@ dataSources:
         - Pie
       abis:
         - name: PProxiedFactory
-          file: ./abis/PProxiedFactory.json
+          file: ./abis/Pie/PProxiedFactory.json
       eventHandlers:
         - event: OwnerChanged(indexed address,indexed address)
           handler: handleOwnerChanged
@@ -39,7 +39,7 @@ dataSources:
         - Pie
       abis:
         - name: PProxiedFactory
-          file: ./abis/PProxiedFactory.json
+          file: ./abis/Pie/PProxiedFactory.json
       eventHandlers:
         - event: OwnerChanged(indexed address,indexed address)
           handler: handleOwnerChanged
@@ -60,10 +60,48 @@ dataSources:
         - Pie
       abis:
         - name: PProxiedFactory
-          file: ./abis/PProxiedFactory.json
+          file: ./abis/Pie/PProxiedFactory.json
       eventHandlers:
         - event: OwnerChanged(indexed address,indexed address)
           handler: handleOwnerChanged
         - event: SmartPoolCreated(indexed address,string,string)
           handler: handleSmartPoolCreated
       file: ./src/mappings/PProxiedFactory.ts
+  - kind: ethereum/contract
+    name: PieFactoryContract
+    network: mainnet
+    source:
+      address: '0x67Ae9653fdaE44b27B68a0F195E16dF7568cb038'
+      abi: PieFactoryContract
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - ExperiePie
+      abis:
+        - name: PieFactoryContract
+          file: ./abis/ExperiePie/PieFactoryContract.json
+      eventHandlers:
+        - event: PieCreated(indexed address,indexed address,indexed uint256)
+          handler: handlePieCreated
+      file: ./src/mappings/PieFactoryContract.ts
+  - kind: ethereum/contract
+    name: PieFactoryContractDXY
+    network: mainnet
+    source:
+      address: '0xf1e9ec6f1a4d00a24a9f8035c2c5e1d093f9b9ad'
+      abi: PieFactoryContract
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - ExperiePie
+      abis:
+        - name: PieFactoryContract
+          file: ./abis/ExperiePie/PieFactoryContract.json
+      eventHandlers:
+        - event: PieCreated(indexed address,indexed address,indexed uint256)
+          handler: handlePieCreated
+      file: ./src/mappings/PieFactoryContract.ts
