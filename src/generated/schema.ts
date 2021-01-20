@@ -176,3 +176,70 @@ export class ExperiePie extends Entity {
     this.set("index", Value.fromBigInt(value));
   }
 }
+
+export class Oven extends Entity {
+  constructor(id: string) {
+    super();
+    this.set("id", Value.fromString(id));
+  }
+
+  save(): void {
+    let id = this.get("id");
+    assert(id !== null, "Cannot save Oven entity without an ID");
+    assert(
+      id.kind == ValueKind.STRING,
+      "Cannot save Oven entity with non-string ID. " +
+        'Considering using .toHex() to convert the "id" to a string.'
+    );
+    store.set("Oven", id.toString(), this);
+  }
+
+  static load(id: string): Oven | null {
+    return store.get("Oven", id) as Oven | null;
+  }
+
+  get id(): string {
+    let value = this.get("id");
+    return value.toString();
+  }
+
+  set id(value: string) {
+    this.set("id", Value.fromString(value));
+  }
+
+  get address(): Bytes {
+    let value = this.get("address");
+    return value.toBytes();
+  }
+
+  set address(value: Bytes) {
+    this.set("address", Value.fromBytes(value));
+  }
+
+  get controller(): Bytes {
+    let value = this.get("controller");
+    return value.toBytes();
+  }
+
+  set controller(value: Bytes) {
+    this.set("controller", Value.fromBytes(value));
+  }
+
+  get pie(): Bytes {
+    let value = this.get("pie");
+    return value.toBytes();
+  }
+
+  set pie(value: Bytes) {
+    this.set("pie", Value.fromBytes(value));
+  }
+
+  get recipe(): Bytes {
+    let value = this.get("recipe");
+    return value.toBytes();
+  }
+
+  set recipe(value: Bytes) {
+    this.set("recipe", Value.fromBytes(value));
+  }
+}

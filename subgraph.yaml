@@ -105,3 +105,60 @@ dataSources:
         - event: PieCreated(indexed address,indexed address,indexed uint256)
           handler: handlePieCreated
       file: ./src/mappings/PieFactoryContract.ts
+  - kind: ethereum/contract
+    name: OvenFactoryContract
+    network: mainnet
+    source:
+      address: '0xa5288ac7bc784370b0c03b1bb1ec4d304ed3d0b7'
+      abi: OvenFactoryContract
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Oven
+      abis:
+        - name: OvenFactoryContract
+          file: ./abis/Oven/OvenFactoryContract.json
+      eventHandlers:
+        - event: OvenCreated(address,address,address,address)
+          handler: handleOvenCreated
+      file: ./src/mappings/OvenFactoryContract.ts
+  - kind: ethereum/contract
+    name: OvenFactoryContractYPIE
+    network: mainnet
+    source:
+      address: '0x99f7bd5d58b01dAb2cd268dB7F4588153Aa978aC'
+      abi: OvenFactoryContract
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Oven
+      abis:
+        - name: OvenFactoryContract
+          file: ./abis/Oven/OvenFactoryContract.json
+      eventHandlers:
+        - event: OvenCreated(address,address,address,address)
+          handler: handleOvenCreated
+      file: ./src/mappings/OvenFactoryContract.ts
+  - kind: ethereum/contract
+    name: OvenFactoryContractBCP
+    network: mainnet
+    source:
+      address: '0x4f08882c585dd58d7b9a6f2a7523e4a468c3cedb' # OvenFactoryV2 (Deprecated)
+      abi: OvenFactoryContract
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.4
+      language: wasm/assemblyscript
+      entities:
+        - Oven
+      abis:
+        - name: OvenFactoryContract
+          file: ./abis/Oven/OvenFactoryContract.json
+      eventHandlers:
+        - event: OvenCreated(address,address,address,address)
+          handler: handleOvenCreated
+      file: ./src/mappings/OvenFactoryContract.ts

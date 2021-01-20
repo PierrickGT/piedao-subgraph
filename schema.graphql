@@ -17,3 +17,11 @@ type ExperiePie @entity {
     deployer: Bytes!
     index: BigInt!
 }
+
+type Oven @entity {
+    id: ID!
+    address: Bytes!
+    controller: Bytes!
+    pie: Bytes!
+    recipe: Bytes!
+}
